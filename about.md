@@ -3,13 +3,4 @@ layout: page
 title: About
 permalink: /about/
 ---
-
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
-
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+I am a full stack software engineer with a strong background in JavaScript. My experience includes working with the entirety of the MEAN stack as well as Python and SQL. I have a passion for products and doing whatever it takes to make a product standout and be effective. I love writing algorithms and data visualization. I have a background in finance and love applying computer science to financial problems. Find my Github here: https://github.com/sreimer15.

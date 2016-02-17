@@ -9,11 +9,9 @@
 title: Sean Reimer's Blog
 email: sreimer15@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  I am a full stack software engineer with a strong background in JavaScript. 
-  My experience includes working with the entirety of the MEAN stack as well as Python and SQL. 
-  I have a passion for products and doing whatever it takes to make a product standout and be effective. 
-  I love writing algorithms and data visualization. I have a background in finance and love applying computer science to financial problems.
-  Find my Github here: https://github.com/sreimer15.
+  Full stack software engineer with a strong background in JavaScript, Node.js, Angular, Express, SQL and MongoDB.
+  I have a passion for products and doing whatever it takes to make a product standout and effective. 
+  I love writing algorithms and data visualization.
 
 # baseurl: "" # the subpath of your site, e.g. /blog
 # url: "http://yourdomain.com" # the base hostname & protocol for your site

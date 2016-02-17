@@ -6,15 +6,14 @@ categories: Angular Cross-Origin JSON
 ---
 
 Angular allows for very useful modules that let you keep your data in organized places.
-For example, if we are building a blog. We can create a structure for every blog post that we will want to have and use the ng-repeat directive to iterate and post our blog post's
+For example, if we are building a blog. We can create a structure for every blog post that we will want to have and use the ng-repeat directive to iterate and post our blog posts.
 For the frontend, a simple json can hold our titles, content and an image. We can store these key value pairs and use the http module to get the data in our json file.
 However, because JSON's can only hold strings we can't write our blog posts how we normally would, and expect to have any sort of structure in our blog post.
-We might instead decide to inject html through our controller, allowing us to write modularized blog posts with line breaks in coherent areas.
-However when we try it we get this error:
+We might instead decide to inject html through our controller, allowing us to write modularized blog posts with line breaks in coherent areas. However, Angular does not directly
+trust html being injected from another file, through an HTTP request.
 
-<!-- insert image here -->
 
-Angular is trying ot proptect us from cross origin attacks, and injecting html from a "random" file in our computer coul dlead to serious security risks.
+Angular is trying ot proptect us from cross origin attacks, and injecting html from a "random" file in our computer could lead to security risks.
 As such, we will need to tell angular that we trust the html that we are planning on injecting into our site.
 
 We are going to need to inject some dependencies and modules into our code to get angular to trust us.
@@ -51,7 +50,7 @@ $sce (Strict Contextual Escaping) is a service that allows contextual escaping i
 
 Now we can run our http get request to get data from our json file and set our $scope object to have the relevant data in the blogPosts key.
 
-By havintg hte $sce in our function, we implicitly tell angular that we can trust the data located within. In order to access the injected html
+By having the $sce in our function, we implicitly tell angular that we can trust the data located within. In order to access the injected html
 We have to ng-bind our data.
 In our index.html: 
 {% highlight html %}
@@ -64,6 +63,6 @@ In our index.html:
 {% endhighlight %}
 
 
-our ng-bind-html directive now directly injects html with no questions asekd depending on what is in our "content" key of our blogPost JSON object. 
+Now our ng-bind-html directive directly injects html with no questions asked depending on what is in our "content" key of our blogPost JSON object. 
 
-Angular helps with modularized code, and being able to hold a structure in place and loop through our blog posts is something helpful!
+Angular helps with modularized code, and being able to hold a structure in place and loop through our blog posts is pretty helpful.

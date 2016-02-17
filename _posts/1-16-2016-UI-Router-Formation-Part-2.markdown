@@ -18,6 +18,8 @@ If we structure our pages in this manner, we can define a main state that keeps 
 
 To do this in angular:
 
+{% highlight javascript %}
+
 .state('home', {
       url: '/',
       views: {
@@ -58,6 +60,9 @@ To do this in angular:
       }
     })
 
+{% endhighlight %}
+
+
 Our sign in state will keep the header and footer but have a new content.
 This is because the “.” symbol in ui-router programatically assigns the state to be a child state of home.
 We have to name our content with the @ symbol in order to define what content will look like in our sign in state.
@@ -65,23 +70,27 @@ We have to name our content with the @ symbol in order to define what content wi
 
 Our html looks like this 
 
+{% highlight HTML %}
 <div ui-view=”header”></div>
 <div ui-view=”content”></div>
 <div ui-view=”footer”></div>
+{% endhighlight %}
 
 
 In our main parent state i.e. ui-sref=”main”
 our content can have sub views like this
-
+{% highlight HTML %}
 <div ui-view=”welcome”></div>
 <div ui-view=”browse”></div>
 <div ui-view=”header”></div>
+{% endhighlight %}
 
 This subviewing only worsk if we have the @ symbol convention to define the parent state that it refers to. THe convention is as follows CurrentView@parentStateName
 Even though our content view may be a simple html page with those three ui-view tags without the @symbol our subviews won’t connect to their relevant files.
 
 
 Now we can have more states that share the main page headers with their own unique content
+{% highlight javascript %}
     .state('home.signin', {
       url: 'signup',
       views: {
@@ -91,6 +100,7 @@ Now we can have more states that share the main page headers with their own uniq
         }
       }
     })
+{% endhighlight %}
 
 
 

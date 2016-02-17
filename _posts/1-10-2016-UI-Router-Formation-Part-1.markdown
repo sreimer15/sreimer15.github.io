@@ -5,25 +5,29 @@ date:   2016-01-10 19:59:21 -0800
 categories: Angular UI-Router FrontEnd Design 
 ---
 
-Angular has been a very popular framework for structuring front-end logic and views. Angular provides a lot of quality of life methods and functions to display data. Controllers with dynamic data and directives such as ng-bind to get data allows for extra modularity once we arrive at our preferred view. Two way data binding allows for views to have a lot of control over the data you display. As such, we can reuse views in a variety of places, and merely change the underlying controllers.
+Angular has been a very popular framework for structuring front-end logic and views. Angular provides a lot of quality of life methods and functions to display data. Controllers with dynamic data and directives such as ng-bind simplifies our requests to the backend for data giving us extra modularity once we arrive at our preferred view. Two way data binding allows for views to have a lot of control over the data you display. As such, we can reuse views in a variety of places, and merely change the underlying controllers.
  
 Because our views have so much power we need to be careful with what states they have access to. One popular and useful way to take control of what states our views have is with ui-router.
 https://github.com/angular-ui/ui-router
 
-Instead of having static headers and footers with content being dynamically changed through states.
+Instead of having static headers and footers.
 We can have static ui-views whose meaning changes with the change of a state.
- 
-<!-- <div ui-view="header"></div>
-<div ui-view="content"></div>
-<div ui-view="footer"></div>
- --> 
-The ui-view directive defines views that exist within a state. We can change the state using the ui-sref directive.
- 
+
+{% highlight HTML %} 
+  <div ui-view="header"></div>
+  <div ui-view="content"></div>
+  <div ui-view="footer"></div> 
+{% endhighlight %}
+
+The ui-view directive defines views that exist within a state. We can change the state using the ui-sref directive. Clicking one of these links will change the state of our app.
+Our new states will have their own headers or content.
+{% highlight HTML %} 
   <a ui-sref="home">Click to go to main</a>
   <a ui-sref="dashboard">Click to go to dashboard</a>
+{% endhighlight %}
 
 Our state holds the logic for what content and header actually means.
- 
+ {% highlight javascript %} 
   .state('home', {
     url: '/',
     views: {
@@ -49,36 +53,26 @@ Our state holds the logic for what content and header actually means.
       }
     }
   })
-  .state('roadmapTemplate', {
-  url: '/roadmaps',
+  .state('exampleTemplate', {
+  url: '/examples',
   views: {
     'content': {
-      templateUrl: 'app/roadmaps/roadmaps.content.html',
-      controller: 'RoadMapsController'
+      templateUrl: 'app/examples/examples.content.html',
+      controller: 'examplesController'
     },
     'header': {
       templateUrl: 'app/main/main.header.html',
-      controller: 'RoadMapsController'
+      controller: 'examplesController'
     },
     'footer': {
       templateUrl: 'app/main/main.footer.html',
-      controller: 'RoadMapsController'
+      controller: 'examplesController'
     }
   }
   })
 });
+{% endhighlight %}
 
-In part 2: Nested Views
- 
- 
- 
- 
-Advantages:
-This method of ui-routing forces us as developers to understand the metaness of both our specific website and websites as a whole. Many of our pages have headers footers and content. And it will occur in that order. Instead of having many pages with separate headers and footers lets swap the content in and out, not by changing our views by holding them in new states. But by merely changing the state, which has its own underlying content which implies our view will change. In this model our states define our views, not the views we want to display defining what state we should be in.
- 
-I am a user who wants to use the dashboard and need an interface for that
-As opposed to
-I am a user who wants a view of a dashboard, give me the state to see that.
- 
+Now we can have new content, or reuse old content in our different states.
 
-
+Using Ui-Router we now have a structured way of defining dynamic views. However, this isn't the canonical way of setting up reusable templates. In part 2 we will talk about Nested Views, and how we can define parent and child states, in order to take our angular app structure to the next level.

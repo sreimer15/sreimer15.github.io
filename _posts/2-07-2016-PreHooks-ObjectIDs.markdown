@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Handling Pre Hooks when Using Object IDs"
+title:  "Handling Pre Hooks when Working With Mongoose"
 date:   2016-02-07 19:59:21 -0800
 categories: Node.js Express Mongoose MongoDB ObjectID BackEnd RESTful-API
 ---

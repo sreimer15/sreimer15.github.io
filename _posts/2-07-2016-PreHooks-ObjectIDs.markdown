@@ -20,7 +20,7 @@ Our server.js looks like this:
 var express  = require('express'),
     mongoose = require('mongoose'),
     CONF = require('../_config.json'); 
-    // Defines a simple JSON object that will hold our PORT and DB URI it looks like this:
+    // Defines a JSON object holding our PORT and DB URI it looks like this:
    /*
     {
       "PORT": {
@@ -36,7 +36,8 @@ var express  = require('express'),
     
 
 mongoose.Promise = require('bluebird'); 
-// Useful library for promises, gives Mongoose access to the then() function ensuring functionality happens in our desired order.
+// Useful library for promises, gives Mongoose access to the then() function
+// ensuring functionality happens in our desired order.
 
 
 var app      = express();
@@ -51,7 +52,8 @@ if (process.env.NODE_ENV === 'test') {
 mongoose.connect(database);
 
 require('./middleware.js')(app, express); 
-// Is the middleware common to all routes stuff like cors and bodyParser. Not entirely relevant to this topic.
+// Is the middleware common to all routes (e.g. CORS and bodyParser). 
+
 require('./router.js'    )(app, express);
 
 app.listen(port, function(){ 

@@ -28,10 +28,10 @@ var express  = require('express'),
         "TEST": 5080
       },
       "DB_URI": {
-        "MAIN": "mongodb://localhost/roadmapToAnything",
-        "TEST": "mongodb://localhost/roadmapTestDB"
+        "MAIN": "mongodb://localhost/exampleApp",
+        "TEST": "mongodb://localhost/exampleDB"
       }
-    }                             *
+    }   
     */
     
 

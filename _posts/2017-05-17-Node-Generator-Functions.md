@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Creating a CLI App with ES6/7 Generators and Async Await"
-date:   2016-05-17 19:59:21 -0800
+date:   2017-05-17 19:59:21 -0800
 categories: Node.js Express Generators ES6/7ObjectID BackEnd RESTful-API
 ---
 

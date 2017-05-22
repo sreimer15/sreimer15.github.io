@@ -9,12 +9,15 @@
 title: Sean Reimer's Blog
 email: sreimer15@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Full stack software engineer with a strong background in JavaScript, Node.js, Angular, Express, SQL and MongoDB.
-  I have a passion for products and doing whatever it takes to make a product standout and effective. 
-  I love writing algorithms and making data visualizations.
 
-# baseurl: "" # the subpath of your site, e.g. /blog
-# url: "http://yourdomain.com" # the base hostname & protocol for your site
+  I am a full stack software engineer with a strong background in JavaScript. 
+  My experience includes working with technologies such as Angular and React on the front end, as well as Node.js/Express and Go on the backend.
+  I have experience with micro service architectures and Docker applications as well as AWS and Kubernetes. I have used SQL, MongoDB, and Redis as data layers.
+  I have a passion for products and doing whatever it takes to make a product standout and be effective.
+  Find my Github here: https://github.com/sreimer15.
+
+# baseurl: "/" # the subpath of your site, e.g. /blog
+# url: "http://sreimer15.github.io" # the base hostname & protocol for your site
 twitter_username: seanreimer
 github_username:  sreimer15
 
